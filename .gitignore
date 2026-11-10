@@ -1,0 +1,9 @@
+# Editor settings (machine-specific)
+.vscode/
+.idea/
+
+# OS clutter
+Thumbs.db
+.DS_Store
+
+# The Laravel app has its own rules (.env, vendor, logs, ...) in tms-laravel/.gitignore

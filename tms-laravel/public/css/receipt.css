@@ -1,0 +1,195 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    /* Mapped perfectly to main.css theme */
+    --navy-primary: #1a237e; 
+    --gray-header: #f1f5f9;  /* Soft Slate background */
+    --gray-stripe: #f8fafc;  /* Ultra light stripe */
+    --text-dark: #1e293b;    /* Slate 800 */
+    --text-gray: #64748b;    /* Slate 500 */
+    --white: #ffffff;
+}
+
+body.receipt-page {
+    background-color: #f2f2ffa3; /* Matches main.css background */
+    font-family: 'Inter', sans-serif; /* Inter is kept here because it looks highly professional on printed invoices */
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    padding: 50px 0;
+    margin: 0;
+    min-height: 100vh;
+}
+
+body.receipt-page {
+    background-color: #f2f2ffa3; 
+    font-family: 'Inter', sans-serif; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    padding: 50px 20px; /* Added horizontal padding */
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: auto; /* Allows horizontal scrolling on small screens */
+}
+
+/* --- A4 PAPER --- */
+.receipt-container {
+    background: var(--white);
+    width: 800px !important;      /* Force strict desktop width */
+    min-width: 800px !important;  /* Never allow it to shrink */
+    min-height: 1130px;           /* A4 height proportion */
+    padding: 0;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- HEADER --- */
+.header { padding: 50px 50px 30px 50px; display: flex; justify-content: space-between; }
+.invoice-title { font-size: 36px; font-weight: 800; letter-spacing: 1px; color: var(--navy-primary); text-transform: uppercase; margin-bottom: 30px; }
+.to-section { margin-bottom: 10px; }
+.label-sm { font-size: 11px; font-weight: 700; color: var(--text-dark); margin-bottom: 5px; display: block; }
+.recipient-name { font-size: 16px; font-weight: 700; color: var(--text-dark); margin-bottom: 4px; }
+.recipient-details { font-size: 13px; color: var(--text-gray); line-height: 1.5; }
+
+/* Right Side Logo Area */
+.header-right { text-align: right; }
+.logo-box { margin-bottom: 20px; display: flex; flex-direction: column; align-items: flex-end; }
+.company-logo-text { font-size: 24px; font-weight: 800; color: var(--navy-primary); line-height: 1.1; }
+.company-slogan { font-size: 11px; color: var(--text-gray); }
+.sender-address { font-size: 12px; color: var(--text-gray); line-height: 1.5; text-align: right; }
+
+/* --- DARK BAR --- */
+.dark-bar {
+    background-color: var(--navy-primary);
+    color: white;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+}
+.bar-column { display: flex; flex-direction: column; padding-right: 40px; border-right: 1px solid rgba(255,255,255,0.2); min-width: 150px; }
+.bar-column:last-child { border-right: none; }
+.bar-label { font-size: 10px; font-weight: 500; opacity: 0.8; margin-bottom: 4px; text-transform: uppercase; }
+.bar-value { font-size: 15px; font-weight: 600; }
+
+/* --- TABLE (Clean Modern Invoice Design) --- */
+.table-wrapper { 
+    padding: 20px 50px 40px 50px; 
+    flex-grow: 1; 
+    min-height: 350px;
+}
+
+.styled-table { 
+    width: 100%; 
+    border-collapse: collapse; 
+}
+
+.styled-table th { 
+    background-color: transparent; 
+    color: var(--text-gray); 
+    font-size: 11px; 
+    font-weight: 700; 
+    text-transform: uppercase; 
+    text-align: left;
+    padding: 12px 10px 12px 0px;
+    letter-spacing: 0.5px; 
+    border-bottom: 2px solid var(--text-dark); 
+}
+
+.styled-table td { 
+    padding: 20px 10px 20px 0px;
+    font-size: 13px; 
+    color: var(--text-dark); 
+    font-weight: 500; 
+    vertical-align: top; 
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.styled-table tr, 
+.styled-table tbody tr {
+    opacity: 1 !important;
+    animation: none !important;
+    transform: none !important;
+    transition: none !important;
+}
+
+.styled-table tr:last-child td {
+    border-bottom: none;
+}
+
+.styled-table tr:nth-child(even),
+.styled-table tr:nth-child(odd) { 
+    background-color: transparent; 
+}
+
+.receipt-main { 
+    font-weight: 700; 
+    display: block; 
+    margin-bottom: 6px; 
+    color: var(--text-dark); 
+    font-size: 14px;
+}
+
+.receipt-sub { 
+    color: var(--text-gray); 
+    font-size: 12px; 
+    display: block; 
+}
+
+/* --- BOTTOM SECTION --- */
+.bottom-section { padding: 0 50px 40px 50px; display: flex; justify-content: space-between; }
+.payment-info { width: 45%; }
+.payment-header { font-size: 13px; font-weight: 700; margin-bottom: 8px; color: var(--text-dark); }
+.payment-detail { font-size: 12px; color: var(--text-gray); margin-bottom: 25px; }
+.terms-header { font-size: 12px; font-weight: 700; margin-bottom: 5px; color: var(--text-dark); }
+.terms-text { font-size: 11px; color: var(--text-gray); line-height: 1.4; }
+
+.totals-box { width: 35%; }
+.total-row { display: flex; justify-content: space-between; font-size: 12px; color: var(--text-dark); margin-bottom: 12px; font-weight: 600; }
+.total-row.final { margin-top: 15px; border-top: 2px solid var(--gray-header); padding-top: 15px; font-size: 16px; font-weight: 800; color: var(--navy-primary); }
+
+/* --- FOOTER --- */
+.footer { 
+    background-color: var(--gray-header); 
+    padding: 20px 50px; 
+    display: flex; 
+    justify-content: space-between;
+    margin-top: 50px; 
+}
+.footer-item { font-size: 11px; color: var(--text-dark); display: flex; align-items: center; gap: 8px; font-weight: 500; }
+.footer-item i { color: var(--navy-primary); }
+
+/* --- ACTION BUTTON --- */
+.action-container {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.btn-fab {
+    width: 65px;
+    height: 65px;
+    border-radius: 50% !important; /* Forces perfect circle over main.css border-radius */
+    font-size: 24px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 25px rgba(26, 35, 126, 0.3) !important;
+    padding: 0 !important; 
+}
+
+.btn-fab:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 15px 35px rgba(26, 35, 126, 0.4) !important;
+}
+
+@media print {
+    body { background: white; padding: 0; }
+    .receipt-container { box-shadow: none; width: 100%; height: 100%; margin: 0; border-radius: 0; }
+    .action-container { display: none; }
+}

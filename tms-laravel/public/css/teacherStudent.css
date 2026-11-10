@@ -1,0 +1,33 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+.search-container { position: relative; width: 300px; }
+.search-input {
+    width: 100%; padding: 12px 20px 12px 45px;
+    border: 1px solid var(--border); border-radius: 12px;
+    font-size: 0.95rem; font-family: 'Outfit', sans-serif;
+    transition: all 0.2s; background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+.search-input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 4px rgba(67, 97, 238, 0.1); }
+.search-icon { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 1rem; pointer-events: none; }
+
+
+.profile-cell { display: flex; align-items: center; gap: 15px; }
+.avatar-img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 2px solid #e2e8f0; }
+.student-name-text { font-weight: 600; color: var(--text-main); }
+.subject-text { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; display: block; max-width: 400px; }
+
+.badge { padding: 6px 12px; border-radius: 8px; font-size: 0.75rem; font-weight: 700; display: inline-block; }
+.badge-blue { background: #dbeafe; color: #1e40af; }
+.badge-purple { background: #f3e8ff; color: #7e22ce; }
+.badge-gray { background: #f1f5f9; color: #64748b; }
+
+.pagination-container { display: flex; justify-content: center; gap: 8px; margin-top: 25px; }
+.page-btn {
+    width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;
+    border-radius: 10px; border: 1px solid var(--border); background: white;
+    color: var(--text-muted); font-weight: 600; cursor: pointer; transition: all 0.2s;
+}
+.page-btn:hover:not(.active):not(:disabled) { background: #f1f5f9; color: var(--text-main); }
+.page-btn.active { background: var(--primary); color: white; border-color: var(--primary); box-shadow: 0 4px 6px -1px rgba(67, 97, 238, 0.3); }
+.page-btn:disabled { opacity: 0.5; cursor: not-allowed; background: #f8fafc; }
